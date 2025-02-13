@@ -30,10 +30,25 @@
             opacity: 0;
             transition: opacity 0.5s ease-in;
         }
+        .play-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 24px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .play-button:hover {
+            background-color: darkred;
+        }
     </style>
 </head>
 <body>
-    <div class="container" id="message"></div>
+    <div class="container">
+        <button class="play-button" onclick="playMusic()">Play Music</button>
+        <div id="message"></div>
+    </div>
 
     <div id="player" style="display: none;"></div>
 
@@ -56,8 +71,12 @@
             });
         }
 
+        function playMusic() {
+            player.playVideo();
+        }
+
         function onPlayerReady(event) {
-            event.target.playVideo();
+            // Do nothing, wait for user interaction
         }
 
         function onPlayerStateChange(event) {
@@ -109,3 +128,4 @@ Für immer dein, Michael Joseph Adams`;
     </script>
 </body>
 </html>
+
